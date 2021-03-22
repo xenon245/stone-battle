@@ -1,0 +1,5 @@
+main: com.github.monulo.sampleplugin.SamplePlugin
+version: 1.0
+name: Tap-Sample-Plugin
+api-version: 1.16
+depend: [Kotlin, ProtocolLib]
