@@ -1,0 +1,121 @@
+[21:15:26] [main/INFO]: Environment: authHost='https://authserver.mojang.com', accountsHost='https://api.mojang.com', sessionHost='https://sessionserver.mojang.com', servicesHost='https://api.minecraftservices.com', name='PROD'
+[21:15:26] [main/INFO]: Reloading ResourceManager: Default, bukkit
+[21:15:28] [Worker-Main-2/INFO]: Loaded 7 recipes
+[21:15:30] [Server thread/INFO]: Starting minecraft server version 1.16.5
+[21:15:30] [Server thread/INFO]: Loading properties
+[21:15:30] [Server thread/INFO]: This server is running Paper version git-Paper-586 (MC: 1.16.5) (Implementing API version 1.16.5-R0.1-SNAPSHOT)
+[21:15:30] [Server thread/INFO]: Debug logging is disabled
+[21:15:30] [Server thread/INFO]: Server Ping Player Sample Count: 12
+[21:15:30] [Server thread/INFO]: Using 4 threads for Netty based IO
+[21:15:30] [Server thread/INFO]: Default game type: SURVIVAL
+[21:15:30] [Server thread/INFO]: Generating keypair
+[21:15:31] [Server thread/INFO]: Starting Minecraft server on *:25565
+[21:15:31] [Server thread/INFO]: Using default channel type
+[21:15:33] [Server thread/INFO]: [WorldEdit] Loading WorldEdit v7.2.2+fc3c499
+[21:15:34] [Server thread/INFO]: Got request to register class com.sk89q.worldedit.bukkit.BukkitServerInterface with WorldEdit [com.sk89q.worldedit.extension.platform.PlatformManager@79c526d9]
+[21:15:34] [Server thread/INFO]: [Kotlin] Loading Kotlin v1.4.31
+[21:15:34] [Server thread/INFO]: [ProtocolLib] Loading ProtocolLib v4.6.1-SNAPSHOT-b499
+[21:15:36] [Server thread/INFO]: [Stone-Battle] Loading Stone-Battle v1.0
+[21:15:36] [Server thread/INFO]: [DelayedRespawn] Loading DelayedRespawn v0.0.1
+[21:15:36] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
+[21:15:36] [Server thread/INFO]: [WorldEdit] Enabling WorldEdit v7.2.2+fc3c499
+[21:15:36] [Server thread/INFO]: WEPIF: Using the Bukkit Permissions API.
+[21:15:36] [Server thread/INFO]: Using com.sk89q.worldedit.bukkit.adapter.impl.Spigot_v1_16_R3 as the Bukkit adapter
+[21:15:38] [Server thread/INFO]: [ProtocolLib] Enabling ProtocolLib v4.6.1-SNAPSHOT-b499
+[21:15:38] [Server thread/INFO]: [ProtocolLib] Started structure compiler thread.
+[21:15:38] [Server thread/INFO]: Preparing level "world"
+[21:15:39] [Server thread/INFO]: Registering commands with com.sk89q.worldedit.bukkit.BukkitServerInterface
+[21:15:39] [Server thread/INFO]: Preparing start region for dimension minecraft:overworld
+[21:15:40] [Server thread/INFO]: Loaded 0 spawn chunks for world world
+[21:15:40] [Server thread/INFO]: Preparing spawn area: 0%
+[21:15:40] [Server thread/INFO]: Time elapsed: 499 ms
+[21:15:40] [Server thread/INFO]: Preparing start region for dimension minecraft:the_nether
+[21:15:40] [Server thread/INFO]: Loaded 0 spawn chunks for world world_nether
+[21:15:40] [Server thread/INFO]: Time elapsed: 468 ms
+[21:15:40] [Server thread/INFO]: Preparing start region for dimension minecraft:the_end
+[21:15:41] [Server thread/INFO]: Loaded 0 spawn chunks for world world_the_end
+[21:15:41] [Server thread/INFO]: Time elapsed: 414 ms
+[21:15:41] [Server thread/INFO]: [Kotlin] Enabling Kotlin v1.4.31
+[21:15:41] [Server thread/INFO]: [Stone-Battle] Enabling Stone-Battle v1.0
+[21:15:41] [Server thread/INFO]: [DelayedRespawn] Enabling DelayedRespawn v0.0.1
+[21:15:41] [Server thread/INFO]: Running delayed init tasks
+[21:15:41] [Server thread/INFO]: Done (11.164s)! For help, type "help"
+[21:15:41] [Server thread/INFO]: Timings Reset
+[21:15:44] [User Authenticator #1/INFO]: UUID of player devil0812 is 5e7b3d47-ec57-4a14-8149-44ad9c384478
+[21:15:44] [Server thread/INFO]: devil0812 joined the game
+[21:15:45] [Server thread/INFO]: devil0812[/110.15.194.46:65170] logged in with entity id 13 at ([world]27.473522918523514, 4.0, 3.1132073746602447)
+[21:15:47] [User Authenticator #1/INFO]: UUID of player sonogram10 is cc452ae3-3b82-403d-9e0c-f3d36460bc91
+[21:15:47] [Server thread/INFO]: sonogram10 joined the game
+[21:15:48] [Server thread/INFO]: sonogram10[/127.0.0.1:65504] logged in with entity id 21 at ([world]-67.5, 4.0, 6.5)
+[21:15:56] [Server thread/INFO]: sonogram10 issued server command: /time set day
+[21:15:56] [Server thread/INFO]: [sonogram10: Set the time to 1000]
+[21:16:10] [Server thread/INFO]: sonogram10 issued server command: /sb start
+[21:16:10] [Server thread/WARN]: java.lang.NullPointerException
+[21:16:10] [Server thread/WARN]: 	at com.github.monulo.stone.StoneBattlePlugin$onEnable$1$1$1$1.invoke(StoneBattlePlugin.kt:24)
+[21:16:10] [Server thread/WARN]: 	at com.github.monulo.stone.StoneBattlePlugin$onEnable$1$1$1$1.invoke(StoneBattlePlugin.kt:11)
+[21:16:10] [Server thread/WARN]: 	at com.github.monun.kommand.KommandDispatcher.dispatch$kommand(KommandDispatcher.kt:110)
+[21:16:10] [Server thread/WARN]: 	at com.github.monun.kommand.KommandAdapter.onCommand(KommandDispatcher.kt:250)
+[21:16:10] [Server thread/WARN]: 	at org.bukkit.command.PluginCommand.execute(PluginCommand.java:45)
+[21:16:10] [Server thread/WARN]: 	at org.bukkit.command.SimpleCommandMap.dispatch(SimpleCommandMap.java:159)
+[21:16:10] [Server thread/WARN]: 	at org.bukkit.craftbukkit.v1_16_R3.CraftServer.dispatchCommand(CraftServer.java:810)
+[21:16:10] [Server thread/WARN]: 	at net.minecraft.server.v1_16_R3.PlayerConnection.handleCommand(PlayerConnection.java:2168)
+[21:16:10] [Server thread/WARN]: 	at net.minecraft.server.v1_16_R3.PlayerConnection.c(PlayerConnection.java:1983)
+[21:16:10] [Server thread/WARN]: 	at net.minecraft.server.v1_16_R3.PlayerConnection.a(PlayerConnection.java:1936)
+[21:16:10] [Server thread/WARN]: 	at net.minecraft.server.v1_16_R3.PacketPlayInChat.a(PacketPlayInChat.java:50)
+[21:16:10] [Server thread/WARN]: 	at net.minecraft.server.v1_16_R3.PacketPlayInChat.a(PacketPlayInChat.java:8)
+[21:16:10] [Server thread/WARN]: 	at net.minecraft.server.v1_16_R3.PlayerConnectionUtils.lambda$ensureMainThread$1(PlayerConnectionUtils.java:35)
+[21:16:10] [Server thread/WARN]: 	at net.minecraft.server.v1_16_R3.TickTask.run(SourceFile:18)
+[21:16:10] [Server thread/WARN]: 	at net.minecraft.server.v1_16_R3.IAsyncTaskHandler.executeTask(IAsyncTaskHandler.java:136)
+[21:16:10] [Server thread/WARN]: 	at net.minecraft.server.v1_16_R3.IAsyncTaskHandlerReentrant.executeTask(SourceFile:23)
+[21:16:10] [Server thread/WARN]: 	at net.minecraft.server.v1_16_R3.IAsyncTaskHandler.executeNext(IAsyncTaskHandler.java:109)
+[21:16:10] [Server thread/WARN]: 	at net.minecraft.server.v1_16_R3.MinecraftServer.bb(MinecraftServer.java:1252)
+[21:16:10] [Server thread/WARN]: 	at net.minecraft.server.v1_16_R3.MinecraftServer.executeNext(MinecraftServer.java:1245)
+[21:16:10] [Server thread/WARN]: 	at net.minecraft.server.v1_16_R3.IAsyncTaskHandler.awaitTasks(IAsyncTaskHandler.java:119)
+[21:16:10] [Server thread/WARN]: 	at net.minecraft.server.v1_16_R3.MinecraftServer.sleepForTick(MinecraftServer.java:1206)
+[21:16:10] [Server thread/WARN]: 	at net.minecraft.server.v1_16_R3.MinecraftServer.w(MinecraftServer.java:1120)
+[21:16:10] [Server thread/WARN]: 	at net.minecraft.server.v1_16_R3.MinecraftServer.lambda$a$0(MinecraftServer.java:289)
+[21:16:10] [Server thread/WARN]: 	at java.base/java.lang.Thread.run(Thread.java:834)
+[21:16:22] [Server thread/INFO]: sonogram10 issued server command: /team add RED
+[21:16:22] [Server thread/INFO]: [sonogram10: Created team [RED]]
+[21:16:24] [Server thread/INFO]: sonogram10 issued server command: /team add BLUE
+[21:16:24] [Server thread/INFO]: [sonogram10: Created team [BLUE]]
+[21:16:31] [Server thread/INFO]: sonogram10 issued server command: /team modify RED color red
+[21:16:31] [Server thread/INFO]: [sonogram10: Updated the color for team [RED] to red]
+[21:16:38] [Server thread/INFO]: sonogram10 issued server command: /team modify BLUE color blue
+[21:16:38] [Server thread/INFO]: [sonogram10: Updated the color for team [BLUE] to blue]
+[21:16:48] [Server thread/INFO]: sonogram10 issued server command: /team modify BLUE color aqua
+[21:16:48] [Server thread/INFO]: [sonogram10: Updated the color for team [BLUE] to aqua]
+[21:16:52] [Server thread/INFO]: sonogram10 issued server command: /team join RED devil0812
+[21:16:52] [Server thread/INFO]: [sonogram10: Added devil0812 to team [RED]]
+[21:16:57] [Server thread/INFO]: sonogram10 issued server command: /team join BLUE sonogram10
+[21:16:57] [Server thread/INFO]: [sonogram10: Added sonogram10 to team [BLUE]]
+[21:17:02] [Server thread/INFO]: sonogram10 issued server command: /sb start
+[21:17:02] [Server thread/WARN]: sonogram10 moved too quickly! 81.57305756660742,0.0,3.3573404285542017
+[21:17:02] [Server thread/WARN]: devil0812 moved too quickly! -73.81723661028121,0.0,0.1653089347889951
+[21:17:02] [Server thread/WARN]: devil0812 moved too quickly! -73.81723661028121,0.0,0.1653089347889951
+[21:18:43] [Server thread/INFO]: devil0812 lost connection: Disconnected
+[21:18:43] [Server thread/INFO]: devil0812 left the game
+[21:19:20] [Server thread/INFO]: sonogram10 lost connection: Disconnected
+[21:19:20] [Server thread/INFO]: sonogram10 left the game
+[21:39:55] [Server thread/INFO]: Stopping the server
+[21:39:55] [Server thread/INFO]: Stopping server
+[21:39:55] [Server thread/INFO]: [DelayedRespawn] Disabling DelayedRespawn v0.0.1
+[21:39:55] [Server thread/INFO]: [Stone-Battle] Disabling Stone-Battle v1.0
+[21:39:55] [Server thread/INFO]: [ProtocolLib] Disabling ProtocolLib v4.6.1-SNAPSHOT-b499
+[21:39:55] [Server thread/INFO]: [Kotlin] Disabling Kotlin v1.4.31
+[21:39:55] [Server thread/INFO]: [WorldEdit] Disabling WorldEdit v7.2.2+fc3c499
+[21:39:55] [Server thread/INFO]: Unregistering com.sk89q.worldedit.bukkit.BukkitServerInterface from WorldEdit
+[21:39:55] [Server thread/INFO]: Saving players
+[21:39:55] [Server thread/INFO]: Saving worlds
+[21:39:55] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:overworld
+[21:39:55] [Server thread/INFO]: ThreadedAnvilChunkStorage (world): All chunks are saved
+[21:39:55] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world_nether]'/minecraft:the_nether
+[21:39:55] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
+[21:39:55] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world_the_end]'/minecraft:the_end
+[21:39:55] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
+[21:39:55] [Server thread/INFO]: ThreadedAnvilChunkStorage (world): All chunks are saved
+[21:39:55] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
+[21:39:55] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
+[21:39:56] [Server thread/INFO]: Flushing Chunk IO
+[21:39:56] [Server thread/INFO]: Closing Thread Pool
+[21:39:56] [Server thread/INFO]: Closing Server
