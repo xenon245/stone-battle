@@ -1,5 +1,9 @@
-main: com.github.monulo.sampleplugin.SamplePlugin
+main: com.github.monulo.stone.StoneBattlePlugin
 version: 1.0
-name: Tap-Sample-Plugin
+name: Stone-Battle
 api-version: 1.16
 depend: [Kotlin, ProtocolLib]
+commands:
+  sb:
+    permission: op
+    description: command for stone battle
