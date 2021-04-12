@@ -1,18 +1,19 @@
 package com.github.monulo.stone
 
+import com.github.monulo.stone.Stone.respawnDelay
+import com.github.monulo.stone.StoneBattlePlugin.Companion.instance
 import org.bukkit.*
 import org.bukkit.entity.ArmorStand
 import org.bukkit.entity.Player
 import org.bukkit.event.EventHandler
+import org.bukkit.event.EventPriority
 import org.bukkit.event.Listener
 import org.bukkit.event.block.Action
 import org.bukkit.event.block.BlockBreakEvent
 import org.bukkit.event.block.BlockFormEvent
 import org.bukkit.event.entity.ItemMergeEvent
 import org.bukkit.event.entity.PlayerDeathEvent
-import org.bukkit.event.player.PlayerInteractEvent
-import org.bukkit.event.player.PlayerJoinEvent
-import org.bukkit.event.player.PlayerRespawnEvent
+import org.bukkit.event.player.*
 import org.bukkit.inventory.ItemStack
 import org.bukkit.util.BlockIterator
 import java.lang.Math.max
@@ -23,6 +24,19 @@ class StoneListener : Listener {
     @EventHandler
     fun onJoin(event: PlayerJoinEvent) {
         Stone.fakeEntityServer.addPlayer(event.player)
+        val player = event.player
+        if (instance.load(player)) player.gameMode = GameMode.SPECTATOR
+    }
+    @EventHandler
+    fun onQuit(event: PlayerQuitEvent) {
+        val player = event.player
+        instance.save(player)
+    }
+    @EventHandler(ignoreCancelled = true)
+    fun onPlayerTeleport(event: PlayerTeleportEvent) {
+        if(event.player in Stone.respawns && event.cause == PlayerTeleportEvent.TeleportCause.SPECTATE) {
+            event.isCancelled = true
+        }
     }
     @EventHandler(ignoreCancelled = true)
     fun onMergeItem(event: ItemMergeEvent) {
@@ -78,30 +92,67 @@ class StoneListener : Listener {
         val block = event.block
         val player = event.player
 
-        if (block.type == Material.STONE
-            && player.gameMode.let { it == GameMode.SURVIVAL || it == GameMode.ADVENTURE }
-            && block.getDrops(player.inventory.itemInMainHand, player).isNotEmpty()
-        ) {
-            event.isDropItems = false
+        if(Stone.redb.location.distance(event.player.location) > 20) {
+            event.player.sendActionBar("이곳에서는 채굴 보너스가 적용되지 않습니다.")
+            } else {
+            if(Bukkit.getScoreboardManager().mainScoreboard.getTeam("RED")?.players!!.contains(event.player)) {
+                if (block.type == Material.STONE
+                    && player.gameMode.let { it == GameMode.SURVIVAL || it == GameMode.ADVENTURE }
+                    && block.getDrops(player.inventory.itemInMainHand, player).isNotEmpty()
+                ) {
+                    event.isDropItems = false
 
-            val loc = block.location.add(0.5, 0.8, 0.5)
-            val count = max(1, sqrt(nextInt(64).toDouble()).toInt())
+                    val loc = block.location.add(0.5, 0.8, 0.5)
+                    val count = max(1, sqrt(nextInt(64).toDouble()).toInt())
 
-            for (i in 0 until count) {
-                val item = ItemStack(Material.COBBLESTONE)
+                    for (i in 0 until count) {
+                        val item = ItemStack(Material.COBBLESTONE)
 
-                loc.world.dropItem(loc, item).apply {
-                    pickupDelay -= i * 2
+                        loc.world.dropItem(loc, item).apply {
+                            pickupDelay -= i * 2
+                        }
+                    }
+                }
+            }
+        }
+        if(Stone.blueb.location.distance(event.player.location) > 20) {
+            if(Bukkit.getScoreboardManager().mainScoreboard.getTeam("BLUE")?.players!!.contains(event.player)) {
+                event.player.sendActionBar("이곳에서는 채굴 보너스가 적용되지 않습니다.")
+            } else {
+                if (block.type == Material.STONE
+                    && player.gameMode.let { it == GameMode.SURVIVAL || it == GameMode.ADVENTURE }
+                    && block.getDrops(player.inventory.itemInMainHand, player).isNotEmpty()
+                ) {
+                    event.isDropItems = false
+
+                    val loc = block.location.add(0.5, 0.8, 0.5)
+                    val count = max(1, sqrt(nextInt(64).toDouble()).toInt())
+
+                    for (i in 0 until count) {
+                        val item = ItemStack(Material.COBBLESTONE)
+
+                        loc.world.dropItem(loc, item).apply {
+                            pickupDelay -= i * 2
+                        }
+                    }
                 }
             }
         }
     }
-    @EventHandler
+    @EventHandler(priority = EventPriority.MONITOR)
     fun onPlayerRespawn(event: PlayerRespawnEvent) {
-        event.player.inventory.forEach { i ->
-            if(i.type == Material.COBBLESTONE) {
-                i.amount = i.amount / 2
-            }
+        val player = event.player
+        val gameMode = player.gameMode
+        if(gameMode == GameMode.CREATIVE || gameMode == GameMode.SPECTATOR) return
+        player.gameMode = GameMode.SPECTATOR
+        Stone.respawns[player] = Respawn().apply {
+            this.respawnLocation = event.respawnLocation
+            this.gameMode = gameMode
+            this.respawnTime = TimeTools.machineTimeMillis() + respawnDelay
+        }
+        for(i in 0..45) {
+            val item = event.player.inventory.getItem(i) ?: return
+            item.amount = item.amount / 2
         }
     }
 }

@@ -15,7 +15,6 @@ $Version = "1.16.5"
 
 # Plugins
 $Plugins = @(
-"https://github.com/monun/delayed-respawn/releases/download/0.0.1/DelayedRespawn.jar",
 "https://github.com/monun/kotlin-plugin/releases/latest/download/Kotlin-1.4.31.jar",
 "https://ci.dmulloy2.net/job/ProtocolLib/lastSuccessfulBuild/artifact/target/ProtocolLib.jar"
 )
