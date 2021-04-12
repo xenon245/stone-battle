@@ -1,9 +1,6 @@
 package com.github.monulo.stone
 
-import org.bukkit.GameMode
-import org.bukkit.Material
-import org.bukkit.Sound
-import org.bukkit.SoundCategory
+import org.bukkit.*
 import org.bukkit.entity.ArmorStand
 import org.bukkit.entity.Player
 import org.bukkit.event.EventHandler
@@ -96,6 +93,14 @@ class StoneListener : Listener {
                 loc.world.dropItem(loc, item).apply {
                     pickupDelay -= i * 2
                 }
+            }
+        }
+    }
+    @EventHandler
+    fun onPlayerRespawn(event: PlayerRespawnEvent) {
+        event.player.inventory.forEach { i ->
+            if(i.type == Material.COBBLESTONE) {
+                i.amount = i.amount / 2
             }
         }
     }
